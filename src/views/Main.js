@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import CountryCard from '../Components/CountryCard';
 import { client } from '../services/client';
 import fetchCountries from '../services/Countries';
+// import SelectContinents from '../Components/Dropdown';
 
 export default function Main() {
   const [countries, setCountries] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(true);
+  //   const [continents, setContinents] = useState('North America');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,8 +31,10 @@ export default function Main() {
       <div className="main">
         {countries.map((country) => (
           <CountryCard key={country.name} {...country} />
+          //   <SelectContinents key={country.continents} {...country} />
         ))}
       </div>
     </>
   );
 }
+// ask tanner for to test error message. When would that occur?
