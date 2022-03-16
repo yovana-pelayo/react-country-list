@@ -23,3 +23,15 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+To Dos
+Get all the countries showing up with no dropdown
+Setup your Main component with countries state
+Get the supabase call working - don't worry about displaying - validate with console.log
+Create your CountryCard component with hard coded data <CountryCard name="Scotland" continent="Europe" iso3="BES" />
+Map through your countries state and display all the countries
+Build the dropdown (don't worry about filtering at this point) -- make sure that when you change the dropdown, the state in Main.js gets updated -- use React dev tools to validate this step
+
+Instead of displaying the countries -- display the FILTERED COUNTRIES
+
+Add your loading state
