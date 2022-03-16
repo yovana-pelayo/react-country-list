@@ -5,21 +5,27 @@ import fetchCountries from '../services/Countries';
 
 export default function Main() {
   const [countries, setCountries] = useState([]);
-  //   const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetchCountries();
-      //   console.log(resp);
-      setCountries(resp);
+      try {
+        const resp = await fetchCountries();
+        setCountries(resp);
+      } catch (e) {
+        setErrorMessage('Ooooopsie! Refresh page please!');
+      }
     };
     fetchData();
   }, []);
   return (
-    <div className="main">
-      {countries.map((country) => (
-        <CountryCard key={country.name} {...country} />
-      ))}
-    </div>
+    <>
+      <p className="error">{errorMessage}</p>
+      <div className="main">
+        {countries.map((country) => (
+          <CountryCard key={country.name} {...country} />
+        ))}
+      </div>
+    </>
   );
 }
