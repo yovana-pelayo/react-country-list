@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CountryCard from '../Components/CountryCard';
-import { client } from '../services/client';
+
 import fetchCountries from '../services/Countries';
 // import SelectContinents from '../Components/Dropdown';
 
