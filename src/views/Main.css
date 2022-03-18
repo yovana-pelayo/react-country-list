@@ -52,3 +52,14 @@
     transform: scale(0.9);
   }
 }
+img {
+  height: 100px;
+  width: 140px;
+}
+.continent {
+  font-size: small;
+}
+.country-card {
+  border: blue solid;
+  margin: 2em;
+}
