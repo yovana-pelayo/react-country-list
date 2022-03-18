@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import CountryCard from '../Components/CountryCard';
-
+import './Main.css';
 import fetchCountries from '../services/Countries';
-// import SelectContinents from '../Components/Dropdown';
+import Dropdown from '../Components/Dropdown';
 
 export default function Main() {
   const [countries, setCountries] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(true);
-  //   const [continents, setContinents] = useState('North America');
+  const [continent, setContinent] = useState('All');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,17 +24,30 @@ export default function Main() {
     };
     fetchData();
   }, []);
-  if (loading) return <div>Loading</div>;
+
+  const filterCountries = () => {
+    return countries.filter((country) => country.continent === continent || continent === 'All');
+  };
+
+  // console.log(filterCountries, 'HELLO MATE');
+  if (loading)
+    return (
+      <div className="lds-heart">
+        <div></div>
+      </div>
+    );
   return (
-    <>
+    <div>
+      <Dropdown callback={setContinent} />
       <p className="error">{errorMessage}</p>
       <div className="main">
-        {countries.map((country) => (
+        {filterCountries().map((country) => (
           <CountryCard key={country.name} {...country} />
-          //   <SelectContinents key={country.continents} {...country} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 // ask tanner for to test error message. When would that occur?
+
+// filterCountries
