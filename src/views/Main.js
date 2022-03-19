@@ -29,12 +29,11 @@ export default function Main() {
     return countries.filter((country) => country.continent === continent || continent === 'All');
   };
 
-  // console.log(filterCountries, 'HELLO MATE');
   if (loading)
     return (
-      <div className="lds-heart">
+      <span className="lds-heart">
         <div></div>
-      </div>
+      </span>
     );
   return (
     <div>
