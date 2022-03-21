@@ -29,7 +29,7 @@ export default function Main() {
     return countries.filter((country) => country.continent === continent || continent === 'All');
   };
 
-  if (loading) return <div className="loader"></div>;
+  if (loading) return <div>Loading</div>;
   return (
     <div>
       <Dropdown callback={setContinent} />
