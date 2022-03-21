@@ -17,7 +17,7 @@ export default function Main() {
         setCountries(resp);
         setTimeout(() => {
           setLoading(false);
-        }, 750);
+        }, 850);
       } catch (e) {
         setErrorMessage('Ooooopsie! Refresh page please!');
       }
@@ -31,9 +31,9 @@ export default function Main() {
 
   if (loading)
     return (
-      <span className="lds-heart">
+      <div className="lds-heart">
         <div></div>
-      </span>
+      </div>
     );
   return (
     <div>
