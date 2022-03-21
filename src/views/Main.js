@@ -29,12 +29,7 @@ export default function Main() {
     return countries.filter((country) => country.continent === continent || continent === 'All');
   };
 
-  if (loading)
-    return (
-      <div className="lds-heart">
-        <div></div>
-      </div>
-    );
+  if (loading) return <div className="loader"></div>;
   return (
     <div>
       <Dropdown callback={setContinent} />
