@@ -19,7 +19,7 @@ export default function Main() {
           setLoading(false);
         }, 850);
       } catch (e) {
-        setErrorMessage('Ooooopsie DAisys! Refresh page please!');
+        setErrorMessage('Ooooopsie Daisys girl! Refresh page please!');
       }
     };
     fetchData();
